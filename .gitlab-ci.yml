@@ -1,0 +1,31 @@
+stages:
+    - build-image
+    - deploy
+
+build-image:
+  stage: build-image
+  image: docker:latest
+  script:
+    - docker login https://regs01.data.kemdikbud.go.id -u pusdatin -p P@ssw0rd 
+    - docker build -t regs01.data.kemdikbud.go.id/verval-ptk-backend:1.0.0 .
+    - docker tag regs01.data.kemdikbud.go.id/verval-ptk-backend:1.0.0 regs01.data.kemdikbud.go.id/verval-ptk-backend:latest
+    - docker push regs01.data.kemdikbud.go.id/verval-ptk-backend:1.0.0
+    - docker push regs01.data.kemdikbud.go.id/verval-ptk-backend:latest
+  tags :
+    - shell
+  only:
+    - release/production
+
+deploy:
+  stage: deploy
+  image: kroniak/ssh-client
+  script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY_PTK")
+    - mkdir -p ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - ssh ubuntu@118.98.237.63 "kubectl rollout restart deploy verval-ptk-backend -n verval-ptk"
+  tags:
+    - master
+  only:
+    - release/production
