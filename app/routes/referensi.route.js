@@ -23,6 +23,7 @@ router.get('/get-jenis-ptk-by-id', controller.jenisPtkbyId);
 router.get('/get-kebutuhan-khusus-by-id', controller.kebutuhankhususById);
 router.get('/get-lembaga-pengangkat-by-id', controller.lembagapengangkatById);
 router.get('/get-status-kepegawaian-by-id', controller.statuskepegawaianById);
+router.get('/get-sumber-gaji-by-id', controller.sumbergajiById);
 
 
 router.use('*', commonValidator.payloadValidation, commonSanitization.sanitizationMiddleware);

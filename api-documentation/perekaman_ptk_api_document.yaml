@@ -536,6 +536,198 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundErrorModel'
 
+  # /v1/vervalptk-service/referensi/get-agama-by-id:
+  #   get:
+  #     description: Fetch Agama Data by ID
+  #     tags:
+  #       - Reference Data By Id
+  #     parameters:
+  #       - in: query
+  #         name: agama_id
+  #         required: true
+  #         description: ID of agama
+  #         schema:
+  #           type: integer
+  #     responses:
+  #       '200':
+  #         description: Successfully fetched Agama data.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/StandarAPIModel'
+  #       '401':
+  #         description: Unauthorized
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/UnauthorizedErrorModel'
+  #       '404':
+  #         description: Not Found
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/NotFoundErrorModel'
+
+  # /v1/vervalptk-service/referensi/get-jenis-ptk-by-id:
+  #   get:
+  #     description: Fetch Jenis PTK by ID
+  #     tags:
+  #       - Reference Data By Id
+  #     parameters:
+  #       - in: query
+  #         name: jenis_ptk_id
+  #         required: true
+  #         description: ID of Jenis PTK
+  #         schema:
+  #           type: integer
+  #     responses:
+  #       '200':
+  #         description: Successfully fetched Jenis PTK data.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/StandarAPIModel'
+  #       '401':
+  #         description: Unauthorized
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/UnauthorizedErrorModel'
+  #       '404':
+  #         description: Not Found
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/NotFoundErrorModel'         
+  
+  # /v1/vervalptk-service/referensi/get-kebutuhan-khusus-by-id:
+  #   get:
+  #     description: Fetch Kebutuhan Khusus by ID
+  #     tags:
+  #       - Reference Data By Id
+  #     parameters:
+  #       - in: query
+  #         name: kebutuhan_khusus_id
+  #         required: true
+  #         description: ID of Kebutuhan Khusus
+  #         schema:
+  #           type: integer
+  #     responses:
+  #       '200':
+  #         description: Successfully fetched Kebutuhan Khusus data.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/StandarAPIModel'
+  #       '401':
+  #         description: Unauthorized
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/UnauthorizedErrorModel'
+  #       '404':
+  #         description: Not Found
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/NotFoundErrorModel'
+
+  # /v1/vervalptk-service/referensi/get-lembaga-pengangkat-by-id:
+  #   get:
+  #     description: Fetch Lembaga Pengangkat by ID
+  #     tags:
+  #       - Reference Data By Id
+  #     parameters:
+  #       - in: query
+  #         name: lembaga_pengangkat_id
+  #         required: true
+  #         description: ID of Lembaga Pengangkat
+  #         schema:
+  #           type: integer
+  #     responses:
+  #       '200':
+  #         description: Successfully fetched Lembaga Pengangkat data.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/StandarAPIModel'
+  #       '401':
+  #         description: Unauthorized
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/UnauthorizedErrorModel'
+  #       '404':
+  #         description: Not Found
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/NotFoundErrorModel'
+
+  # /v1/vervalptk-service/referensi/get-status-kepegawaian-by-id:
+  #   get:
+  #     description: Fetch Status Kepegawaian by ID
+  #     tags:
+  #       - Reference Data By Id
+  #     parameters:
+  #       - in: query
+  #         name: status_kepegawaian_id
+  #         required: true
+  #         description: ID of Status Kepegawaian
+  #         schema:
+  #           type: integer
+  #     responses:
+  #       '200':
+  #         description: Successfully fetched Status Kepegawaian data.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/StandarAPIModel'
+  #       '401':
+  #         description: Unauthorized
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/UnauthorizedErrorModel'
+  #       '404':
+  #         description: Not Found
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/NotFoundErrorModel'
+
+  # /v1/vervalptk-service/referensi/get-sumber-gaji-by-id:
+  #   get:
+  #     description: Fetch Sumber Gaji by ID
+  #     tags:
+  #       - Reference Data By Id
+  #     parameters:
+  #       - in: query
+  #         name: sumber_gaji_id
+  #         required: true
+  #         description: ID of Sumber Gaji
+  #         schema:
+  #           type: integer
+  #     responses:
+  #       '200':
+  #         description: Successfully fetched Sumber Gaji data.
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/StandarAPIModel'
+  #       '401':
+  #         description: Unauthorized
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/UnauthorizedErrorModel'
+  #       '404':
+  #         description: Not Found
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/NotFoundErrorModel'
+
   /v1/vervalptk-service/referensi/get-reff-all:
     post:
       description: Fetch All Data Referensi
@@ -575,6 +767,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundErrorModel'
+
+                
 components:
   schemas:
     StandarAPIModel:
