@@ -17,6 +17,7 @@ const SP_GET_JENIS_PTK_BY_ID    = 'sp_get_jenis_ptk_by_id';
 const SP_GET_KEBUTUHAN_KHUSUS_BY_ID    = 'sp_get_kebutuhan_khusus_by_id';
 const SP_GET_LEMBAGA_PENGANGKAT_BY_ID    = 'sp_get_lembaga_pengangkat_by_id';
 const SP_GET_STATUS_KEPEGAWAIAN_BY_ID    = 'sp_get_status_kepegawaian_by_id';
+const SP_GET_SUMBER_GAJI_BY_ID    = 'sp_get_sumber_gaji_by_id';
 
 
 
@@ -42,7 +43,7 @@ var sp = {
     SP_GET_KEBUTUHAN_KHUSUS_BY_ID,
     SP_GET_LEMBAGA_PENGANGKAT_BY_ID,
     SP_GET_STATUS_KEPEGAWAIAN_BY_ID,
-    
+    SP_GET_SUMBER_GAJI_BY_ID,
     
 };
 

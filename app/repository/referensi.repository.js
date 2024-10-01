@@ -328,7 +328,27 @@ const statuskepegawaianById = async (params) => {
             throw err
         }
 };
+const sumbergajiById = async (params) => {
+    await poolConnect;
+    try {
+        const request = pool.request();
+        const result = await request
+            .input('sumber_gaji_id', params.sumber_gaji_id)
+            .output('status_code')
+            .output('message')
+            .execute(SP_NAME.SP_GET_SUMBER_GAJI_BY_ID);
 
+            const res = {
+                status_code: result.output.status_code,
+                message: result.output.message,
+                data: (result.recordset) ? result.recordset : []
+            }
+            return res
+        } catch (err) {
+            console.error('Error executing stored procedure:', err);
+            throw err
+        }
+};
 const repository ={
     agama,
     jenisPtk,
@@ -346,6 +366,7 @@ const repository ={
     kebutuhankhususById,
     lembagapengangkatById,
     statuskepegawaianById,
+    sumbergajiById
 }
 
 module.exports = repository
