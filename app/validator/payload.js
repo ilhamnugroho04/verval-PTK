@@ -178,6 +178,22 @@ const PAYLOAD_VALIDATOR_DATA = [
             { nama: 'status_kepegawaian_id' } 
         ]
     },
+    {
+        app_route: 'referensi',
+        url: 'get-sumber-gaji-by-id',
+        method: HTTP_METHOD.GET,
+        params: [
+            { nama: 'sumber_gaji_id' } 
+        ]
+    },
+    {
+        app_route: 'referensi',
+        url: 'get-sekolah-by-wilayah',
+        method: HTTP_METHOD.GET,
+        params: [
+            { nama: 'kode_wilayah' } 
+        ]
+    },
     
 ]
 

@@ -157,6 +157,27 @@ const statuskepegawaianById = async (req, res) => {
         utils.errorCatchResponse(req, res, ex);
     }
 };
+const sumbergajiById = async (req, res) => {
+    try {
+        const { sumber_gaji_id } = req.query;
+        const data = await service.sumbergajiById({ sumber_gaji_id });
+
+        utils.successResponse(req, res, data);
+    } catch (ex) {
+        utils.errorCatchResponse(req, res, ex);
+    }
+};
+const sekolahByWilayah = async (req, res) => {
+    try {
+        const { sumber_gaji_id } = req.query;
+        const data = await service.sekolahByWilayah({ sumber_gaji_id });
+
+        utils.successResponse(req, res, data);
+    } catch (ex) {
+        utils.errorCatchResponse(req, res, ex);
+    }
+};
+
 
 
 const controller = {
@@ -176,6 +197,8 @@ const controller = {
     kebutuhankhususById,
     lembagapengangkatById,
     statuskepegawaianById,
+    sumbergajiById,
+    sekolahByWilayah
 }
 
 module.exports = controller;

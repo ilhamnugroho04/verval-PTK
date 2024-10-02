@@ -134,7 +134,22 @@ const statuskepegawaianById = async (params) => {
         throw ex;
     }
 };
-
+const sumbergajiById = async (params) => {
+    try {
+        const res = await repository.sumbergajiById(params);
+        return res;
+    } catch (ex) {
+        throw ex;
+    }
+};
+const sekolahByWilayah = async (params) => {
+    try {
+        const res = await repository.sekolahByWilayah(params);
+        return res;
+    } catch (ex) {
+        throw ex;
+    }
+};
 const service = {
     agama,
     jenisPtk,
@@ -152,6 +167,7 @@ const service = {
     kebutuhankhususById,
     lembagapengangkatById,
     statuskepegawaianById,
+    sumbergajiById,
 }
 
 module.exports = service;
