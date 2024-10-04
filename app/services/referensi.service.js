@@ -168,6 +168,7 @@ const service = {
     lembagapengangkatById,
     statuskepegawaianById,
     sumbergajiById,
+    sekolahByWilayah,
 }
 
 module.exports = service;

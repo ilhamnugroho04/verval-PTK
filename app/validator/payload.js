@@ -19,11 +19,10 @@ const PAYLOAD_VALIDATOR_DATA = [
             { nama: 'status_perkawinan' },
             { nama: 'email' },
             { nama: 'kewarganegaraan' },
-            { nama: 'kode_wilayah' },
             { nama: 'alamat_jalan' },
             { nama: 'rt' },
             { nama: 'rw' },
-            { nama: 'desa_kelurahan' },
+            { nama: 'kode_wilayah' },
             { nama: 'kode_pos' },
             { nama: 'jenis_ptk_id' },
             { nama: 'jabatan_ptk_id' },
@@ -34,6 +33,7 @@ const PAYLOAD_VALIDATOR_DATA = [
             { nama: 'tmt_pengangkatan' },
             { nama: 'sumber_gaji_id' },
             { nama: 'sudah_lisensi_kepala_sekolah' },
+            { nama: 'sekolah_id'} ,
             { nama: 'nomor_surat_tugas' },
             { nama: 'tgl_surat_tugas' },
             { nama: 'tmt_tugas' },
@@ -188,10 +188,38 @@ const PAYLOAD_VALIDATOR_DATA = [
     },
     {
         app_route: 'referensi',
-        url: 'get-sekolah-by-wilayah',
+        url: 'get-sekolah-by-nama',
         method: HTTP_METHOD.GET,
         params: [
-            { nama: 'kode_wilayah' } 
+            { nama: 'nama' },
+            { nama: 'kode_wilayah' }
+        ]
+    },
+    {
+        app_route: 'referensi',
+        url: 'get-jabatan-tugas-ptk',
+        method: HTTP_METHOD.GET,
+        params: [
+            { nama: 'jabatan_ptk_id' },
+            { nama: 'nama' }
+        ]
+    },
+    {
+        app_route: 'referensi',
+        url: 'get-negara',
+        method: HTTP_METHOD.GET,
+        params: [
+            { nama: 'negara_id' },
+            { nama: 'nama' }
+        ]
+    },
+    {
+        app_route: 'referensi',
+        url: 'get-pekerjaan',
+        method: HTTP_METHOD.GET,
+        params: [
+            { nama: 'pekerjaan_id' },
+            { nama: 'nama' }
         ]
     },
     

@@ -68,10 +68,6 @@ paths:
                   format: email
                   maxLength: 60
                   example: "johndoe@example.com"
-                kode_wilayah:
-                  type: string
-                  maxLength: 8
-                  example: "12345678"
                 alamat_jalan:
                   type: string
                   maxLength: 255
@@ -84,10 +80,10 @@ paths:
                   type: number
                   format: double
                   example: 2
-                desa_kelurahan:
+                kode_wilayah:
                   type: string
-                  maxLength: 60
-                  example: "Kebayoran Baru"
+                  maxLength: 8
+                  example: "032713AH"
                 kode_pos:
                   type: string
                   maxLength: 5
@@ -123,6 +119,9 @@ paths:
                   type: number
                   format: double
                   example: 1
+                sekolah_id:
+                  type: string
+                  example: "30e40bb9-e232-4963-be7b-f35160355c64"
                 sudah_lisensi_kepala_sekolah:
                   type: number
                   format: double
@@ -535,6 +534,138 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotFoundErrorModel'
+  /v1/vervalptk-service/referensi/get-jabatan-tugas-ptk:
+    get:
+      description: Fetch Jabatan Tugas PTK
+      tags:
+        - Reference Data
+      parameters:
+        - in: query
+          name: jabatan_ptk_id
+          schema:
+            type: integer
+        - in: query
+          name: nama
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully fetched Kabupaten data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+  /v1/vervalptk-service/referensi/get-negara:
+    get:
+      description: Fetch Kewarganegaraan
+      tags:
+        - Reference Data
+      parameters:
+        - in: query
+          name: negara_id
+          schema:
+            type: integer
+        - in: query
+          name: nama
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully fetched Kabupaten data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+  /v1/vervalptk-service/referensi/get-pekerjaan:
+    get:
+      description: Fetch Kewarganegaraan
+      tags:
+        - Reference Data
+      parameters:
+        - in: query
+          name: pekerjaan_id
+          schema:
+            type: integer
+        - in: query
+          name: nama
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully fetched Kabupaten data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+  /v1/vervalptk-service/referensi/get-sekolah-by-nama:
+    get:
+      description: Fetch Kabupaten
+      tags:
+        - Reference Data
+      parameters:
+        - in: query
+          name: kode_wilayah
+          schema:
+            type: string
+        - in: query
+          name: nama
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully fetched Kabupaten data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
 
   /v1/vervalptk-service/referensi/get-reff-all:
     post:
@@ -559,6 +690,197 @@ paths:
       responses:
         '200':
           description: Successfully fetched All Data Referensi.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+  /v1/vervalptk-service/referensi/get-agama-by-id:
+    get:
+      description: Fetch Agama Data by ID
+      tags:
+        - Reference Data By Id
+      parameters:
+        - in: query
+          name: agama_id
+          required: true
+          description: ID of agama
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully fetched Agama data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+
+  /v1/vervalptk-service/referensi/get-jenis-ptk-by-id:
+    get:
+      description: Fetch Jenis PTK by ID
+      tags:
+        - Reference Data By Id
+      parameters:
+        - in: query
+          name: jenis_ptk_id
+          required: true
+          description: ID of Jenis PTK
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully fetched Jenis PTK data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'         
+  
+  /v1/vervalptk-service/referensi/get-kebutuhan-khusus-by-id:
+    get:
+      description: Fetch Kebutuhan Khusus by ID
+      tags:
+        - Reference Data By Id
+      parameters:
+        - in: query
+          name: kebutuhan_khusus_id
+          required: true
+          description: ID of Kebutuhan Khusus
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully fetched Kebutuhan Khusus data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+
+  /v1/vervalptk-service/referensi/get-lembaga-pengangkat-by-id:
+    get:
+      description: Fetch Lembaga Pengangkat by ID
+      tags:
+        - Reference Data By Id
+      parameters:
+        - in: query
+          name: lembaga_pengangkat_id
+          required: true
+          description: ID of Lembaga Pengangkat
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully fetched Lembaga Pengangkat data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+
+  /v1/vervalptk-service/referensi/get-status-kepegawaian-by-id:
+    get:
+      description: Fetch Status Kepegawaian by ID
+      tags:
+        - Reference Data By Id
+      parameters:
+        - in: query
+          name: status_kepegawaian_id
+          required: true
+          description: ID of Status Kepegawaian
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully fetched Status Kepegawaian data.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandarAPIModel'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorModel'
+
+  /v1/vervalptk-service/referensi/get-sumber-gaji-by-id:
+    get:
+      description: Fetch Sumber Gaji by ID
+      tags:
+        - Reference Data By Id
+      parameters:
+        - in: query
+          name: sumber_gaji_id
+          required: true
+          description: ID of Sumber Gaji
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully fetched Sumber Gaji data.
           content:
             application/json:
               schema:

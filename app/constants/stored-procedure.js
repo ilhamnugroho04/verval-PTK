@@ -18,7 +18,10 @@ const SP_GET_KEBUTUHAN_KHUSUS_BY_ID    = 'sp_get_kebutuhan_khusus_by_id';
 const SP_GET_LEMBAGA_PENGANGKAT_BY_ID    = 'sp_get_lembaga_pengangkat_by_id';
 const SP_GET_STATUS_KEPEGAWAIAN_BY_ID    = 'sp_get_status_kepegawaian_by_id';
 const SP_GET_SUMBER_GAJI_BY_ID    = 'sp_get_sumber_gaji_by_id';
-const SP_GET_SEKOLAH     = 'sp_get_sumber_gaji_by_id';
+const SP_GET_SEKOLAH     = 'sp_get_wilayah_search_sekolah';
+const SP_GET_JABATAN_TUGAS_PTK ='';
+const SP_GET_NEGARA = '';
+const SP_GET_PEKERJAAN ='';
 
 
 
@@ -46,6 +49,9 @@ var sp = {
     SP_GET_STATUS_KEPEGAWAIAN_BY_ID,
     SP_GET_SUMBER_GAJI_BY_ID,
     SP_GET_SEKOLAH,
+    SP_GET_JABATAN_TUGAS_PTK,
+    SP_GET_NEGARA,
+    SP_GET_PEKERJAAN,
     
     
 };

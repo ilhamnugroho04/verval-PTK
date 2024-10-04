@@ -24,7 +24,11 @@ router.get('/get-kebutuhan-khusus-by-id', controller.kebutuhankhususById);
 router.get('/get-lembaga-pengangkat-by-id', controller.lembagapengangkatById);
 router.get('/get-status-kepegawaian-by-id', controller.statuskepegawaianById);
 router.get('/get-sumber-gaji-by-id', controller.sumbergajiById);
-router.get('/get-sekolah-by-wilayah', controller.sekolahByWilayah);
+router.get('/get-sekolah-by-nama', controller.sekolahByWilayah);
+router.get('/get-jebatan_tugas_ptk', controller.jabatantugasPTK);
+router.get('/get-negara', controller.negara);
+router.get('/get-pekerjaan', controller.pekerjaan);
+
 
 
 router.use('*', commonValidator.payloadValidation, commonSanitization.sanitizationMiddleware);

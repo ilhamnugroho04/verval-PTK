@@ -169,8 +169,38 @@ const sumbergajiById = async (req, res) => {
 };
 const sekolahByWilayah = async (req, res) => {
     try {
-        const { sumber_gaji_id } = req.query;
-        const data = await service.sekolahByWilayah({ sumber_gaji_id });
+        const { kode_wilayah, nama } = req.query;
+        const data = await service.sekolahByWilayah({ kode_wilayah, nama });
+
+        utils.successResponse(req, res, data);
+    } catch (ex) {
+        utils.errorCatchResponse(req, res, ex);
+    }
+};
+const jabatantugasPTK = async (req, res) => {
+    try {
+        const { jabatan_ptk_id, nama } = req.query;
+        const data = await service.jabatantugasPTK({jabatan_ptk_id, nama});
+
+        utils.successResponse(req, res, data);
+    } catch (ex) {
+        utils.errorCatchResponse(req, res, ex);
+    }
+};
+const negara = async (req, res) => {
+    try {
+        const { negara_id, nama } = req.query;
+        const data = await service.negara({negara_id, nama});
+
+        utils.successResponse(req, res, data);
+    } catch (ex) {
+        utils.errorCatchResponse(req, res, ex);
+    }
+};
+const pekerjaan = async (req, res) => {
+    try {
+        const { pekerjaan_id, nama } = req.query;
+        const data = await service.pekerjaan({pekerjaan_id, nama});
 
         utils.successResponse(req, res, data);
     } catch (ex) {
@@ -198,7 +228,10 @@ const controller = {
     lembagapengangkatById,
     statuskepegawaianById,
     sumbergajiById,
-    sekolahByWilayah
+    sekolahByWilayah,
+    jabatantugasPTK,
+    negara,
+    pekerjaan,
 }
 
 module.exports = controller;

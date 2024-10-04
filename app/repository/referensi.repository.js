@@ -354,10 +354,77 @@ const sekolahByWilayah = async (params) => {
     try {
         const request = pool.request();
         const result = await request
+            .input('nama', params.nama)
             .input('kode_wilayah', params.kode_wilayah)
             .output('status_code')
             .output('message')
-            .execute(SP_NAME.SP_GET_SUMBER_GAJI_BY_ID);
+            .execute(SP_NAME.SP_GET_SEKOLAH);
+
+            const res = {
+                status_code: result.output.status_code,
+                message: result.output.message,
+                data: (result.recordset) ? result.recordset : []
+            }
+            return res
+        } catch (err) {
+            console.error('Error executing stored procedure:', err);
+            throw err
+        }
+};
+const jabatantugasPTK = async (params) => {
+    await poolConnect;
+    try {
+        const request = pool.request();
+        const result = await request
+            .input('jabatan_ptk_id', params.jabatan_ptk_id)
+            .input('nama', params.nama)
+            .output('status_code')
+            .output('message')
+            .execute(SP_NAME.SP_GET_JABATAN_TUGAS_PTK);
+
+            const res = {
+                status_code: result.output.status_code,
+                message: result.output.message,
+                data: (result.recordset) ? result.recordset : []
+            }
+            return res
+        } catch (err) {
+            console.error('Error executing stored procedure:', err);
+            throw err
+        }
+};
+const negara = async (params) => {
+    await poolConnect;
+    try {
+        const request = pool.request();
+        const result = await request
+            .input('negara_id', params.negara_id)
+            .input('nama', params.nama)
+            .output('status_code')
+            .output('message')
+            .execute(SP_NAME.SP_GET_NEGARA);
+
+            const res = {
+                status_code: result.output.status_code,
+                message: result.output.message,
+                data: (result.recordset) ? result.recordset : []
+            }
+            return res
+        } catch (err) {
+            console.error('Error executing stored procedure:', err);
+            throw err
+        }
+};
+const pekerjaan = async (params) => {
+    await poolConnect;
+    try {
+        const request = pool.request();
+        const result = await request
+            .input('pekerjaan_id', params.pekerjaan_id)
+            .input('nama', params.nama)
+            .output('status_code')
+            .output('message')
+            .execute(SP_NAME.SP_GET_PEKERJAAN);
 
             const res = {
                 status_code: result.output.status_code,
@@ -390,6 +457,9 @@ const repository ={
     statuskepegawaianById,
     sumbergajiById,
     sekolahByWilayah,
+    jabatantugasPTK,
+    negara,
+    pekerjaan,
 }
 
 module.exports = repository
